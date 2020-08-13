@@ -1,0 +1,13 @@
+// this is a comment
+(( )){} // grouping stuff
+!*+-/=<> <= == // operators
+/*
+multiline comments
+*/
+print "strings work!!!" /* short 'multiline' comments */
+/*
+multiline comments
+
+
+with ~space~
+*/
