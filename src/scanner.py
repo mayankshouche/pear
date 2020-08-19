@@ -95,13 +95,13 @@ class Scanner:
                 self.addToken(TokenType.STRING, self.src[self.start+1:self.cur-1])
 
         elif self.isDigit(c):
-            while(self.isDigit(peek())): self.advance()
+            while(self.isDigit(self.peek())): self.advance()
 
-            if peek() == '.' and self.isDigit(self.peekTwo()):
+            if self.peek() == '.' and self.isDigit(self.peekTwo()):
                 self.advance()
 
-            while(self.isDigit(peek())): self.advance()
-            self.addToken(TokenType.NUMBER, float(self.src[self.start, self,cur]))
+            while(self.isDigit(self.peek())): self.advance()
+            self.addToken(TokenType.NUMBER, float(self.src[self.start:self.cur]))
 
         elif self.isAlpha(c):
             while(self.isAlphaNumeric(self.peek())): self.advance()

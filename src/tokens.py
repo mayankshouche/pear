@@ -22,5 +22,5 @@ class Token:
     
     def __str__(self):
         lex = self.lexeme if self.lexeme else ""
-        lit = self.literal if self.literal else ""
+        lit = str(self.literal) if self.literal else ""
         return str(self._type) + " " + lex + " " + lit
