@@ -115,8 +115,8 @@ class Scanner:
             elif self.match('*'):
                 # consume multiline comment until end
                 while not (self.peek() == '*' and self.peekTwo() == '/') and self.hasNext():
+                    if self.peek() == '\n': self.line += 1
                     self.advance()
-
                 if not self.hasNext():
                     err(self.line, "Unterminated multiline comment.")
                 else: # skip over the '*' and '/'
